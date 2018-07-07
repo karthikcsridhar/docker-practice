@@ -34,7 +34,7 @@ node {
 	   /* app.push() */
         }*/
 
-	dir ('/var/lib/jenkins/workspace/') { 
+	dir('/var/lib/jenkins/workspace/') { 
     		sh 'pwd; docker tag docker-practice-nodeapp karthikcsridhar/docker-practice-nodeapp:latest; docker push karthikcsridhar/docker-practice-nodeapp:latest;'
 	}	
       }
