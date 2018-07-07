@@ -31,14 +31,12 @@ node {
         /*docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
-	    app.push()
+	   /* app.push() */
         }*/
 
-	steps {
-        	withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
-          	sh 'docker push docker-practice-nodeapp:${env.BUILD_NUMBER}'
-          	sh 'docker push docker-practice-nodeapp:latest'
-        }
+	dir ('/var/lib/jenkins/workspace/') { 
+    		sh 'pwd; docker tag docker-practice-nodeapp karthikcsridhar/docker-practice-nodeapp:latest; docker push karthikcsridhar/docker-practice-nodeapp:latest;'
+	}	
       }
     }
 }
