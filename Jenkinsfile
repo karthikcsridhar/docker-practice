@@ -37,6 +37,6 @@ node {
 	dir('/var/lib/jenkins/workspace/') { 
     		sh 'pwd; docker tag docker-practice-nodeapp karthikcsridhar/docker-practice-nodeapp:latest; docker push karthikcsridhar/docker-practice-nodeapp:latest;'
 	}	
-      }
+      
     }
 }
