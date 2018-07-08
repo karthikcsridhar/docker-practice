@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["pm2", "start", "/src/docker_config/ecosystem.config.js"]
+CMD ["npm", "start"]
