@@ -39,4 +39,13 @@ node {
 	}	
       
     }
+
+    stage('Promote to Dev'){
+	/* create a trigger file that is read by a cron job in the server */    	
+	
+	dir('/home/bitnami/apps/test/'){
+		sh 'touch karthikcsridhar/docker-practice-nodeapp.do.deploy;'
+	}
+	
+    }
 }
