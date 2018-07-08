@@ -1,4 +1,4 @@
-FROM mhart/alpine-node
+FROM keymetrics/pm2:latest-alpine
 
 WORKDIR /src
 
@@ -10,4 +10,7 @@ COPY . .
 
 EXPOSE 3000
 
-RUN pm2 start /src/docker_config/ecosystem.config.js
+# Show current folder structure in logs
+RUN ls -al -R
+
+CMD [ "pm2-runtime", "start", "/src/docker_config/ecosystem.config.js" ]
