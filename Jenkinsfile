@@ -49,3 +49,12 @@ node {
 	
     }
 }
+
+stage('Deploy to Prod Approval'){
+    input "Deploy to prod?"
+}
+node {
+    stage('Deploy to Prod'){
+        echo "deploying"
+    }
+}
