@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+RUN pm2 start /src/docker_config/ecosystem.config.js
